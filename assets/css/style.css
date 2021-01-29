@@ -1,0 +1,138 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0;
+  }
+  
+  body {
+    font-family:'Londrina Solid', cursive;
+    margin: 0;
+    background-color: rgb(70, 67, 77);
+    /* background-color: darkolivegreen; for debugging*/
+  }
+  
+  h1{ 
+    text-align: center;
+    color: rgba(232, 102, 236);
+  }
+  header{
+    padding: 33px;
+    border:2px solid orange; /*for debugging */
+  }
+  header > h1 > p{
+    padding-top: 10px;
+    color: rgb(230, 230, 239);
+    font-size: 12px;
+    font-weight: 200;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: rgb(70, 67, 77);
+    border: 5px solid rgb(230, 17, 17); /*for debugging */
+  }
+  /* sets up grid for cards */
+  section {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 18px;
+    margin: auto;
+    border: 3.5px solid yellowgreen;
+  
+  }
+  
+  .card-column{
+    /* display: flex; */  /*this changes my layout*/
+    position: relative;
+    color: rgba(232, 102, 236);
+    border: 2.2px dotted white; 
+  } 
+  
+  .card-column p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    font-size: 13px;
+  }
+  .card-header{
+    display: flex;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    top: -17px;
+    right: 15px;
+    height: 30px;
+    width: 90%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: rgb(70, 67, 77);
+    border-radius: 5px;
+    
+  }
+  
+  .card-column .card-header {
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+  }
+  .card-column:hover, 
+  .card-column:hover .card-header {
+  box-shadow: inset 0px 0px 8px;
+  rgba(232, 102, 236, 1), 0 0 15px
+  rgba(232, 236, 1);
+  }
+  
+  pre {
+    display:flex;
+    white-space: pre-wrap;
+    color: rgb(230, 230, 239);
+    margin: 3%;
+    border-radius: 15px;
+    background-image: linear-gradient(rgba(232, 102, 236, .3) 0%,
+                                      rgba(232, 102, 236, 1.2) 100%
+                                       );
+  }
+  footer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(188, 92, 236);
+  border: 2px solid blue; /*for debugging */
+  }
+  
+  /* flex wrap on parent div
+  flex basis 33% */
+  /* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict */
+  
+  /* Tablets */
+  @media screen and (max-width: 992px) {
+    main {
+      flex-basis: 33%;
+    }
+  }
+  
+  /* Large smartphones*/
+  @media screen and (max-width: 768px) {
+    main {
+      flex-basis: 50%;
+    }
+  }
+  
+  /* Small smartphones*/
+  @media screen and (max-width: 576px) {
+    main {
+      flex-basis: 100%;
+    }
+  }
