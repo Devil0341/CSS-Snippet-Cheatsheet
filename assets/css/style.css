@@ -5,6 +5,11 @@
     margin: 0;
   }
   
+  .page{
+    max-width: 850px;
+    margin: 0 auto;
+    width: 100%;
+  }
   body {
     font-family:'Londrina Solid', cursive;
     margin: 0;
@@ -18,7 +23,7 @@
   }
   header{
     padding: 33px;
-    border:2px solid orange; /*for debugging */
+    /*border:2px solid orange; for debugging */
   }
   header > h1 > p{
     padding-top: 10px;
@@ -37,24 +42,28 @@
     height: auto;
     margin: auto;
     background-color: rgb(70, 67, 77);
-    border: 5px solid rgb(230, 17, 17); /*for debugging */
+    /*border: 5px solid rgb(230, 17, 17); for debugging */
   }
-  /* sets up grid for cards */
+  /* used display flex for container */
   section {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px 18px;
     margin: auto;
-    border: 3.5px solid yellowgreen;
+    /* border: 3.5px solid yellowgreen; for debugging */
   
   }
   
   .card-column{
-    /* display: flex; */  /*this changes my layout*/
+    flex-basis: 100%;
+    /* flex: 1 1 auto; */
     position: relative;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     color: rgba(232, 102, 236);
-    border: 2.2px dotted white; 
+    border: 2.2px dotted white;
   } 
   
   .card-column p {
@@ -67,6 +76,7 @@
   }
   .card-header{
     display: flex;
+    justify-content: center;
     border: 1px solid whitesmoke;
     position: absolute;
     top: -17px;
@@ -109,30 +119,21 @@
   align-items: center;
   justify-content: center;
   color: rgb(188, 92, 236);
-  border: 2px solid blue; /*for debugging */
+  /*border: 2px solid blue; for debugging */
   }
   
-  /* flex wrap on parent div
-  flex basis 33% */
   /* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict */
   
   /* Tablets */
-  @media screen and (max-width: 992px) {
-    main {
+  @media screen and (min-width: 768px) {
+    .card-column {
+      flex-basis: 50%;
+    }
+  @media screen and (min-width: 992px) {
+    .card-column {
       flex-basis: 33%;
     }
   }
-  
-  /* Large smartphones*/
-  @media screen and (max-width: 768px) {
-    main {
-      flex-basis: 50%;
-    }
   }
   
-  /* Small smartphones*/
-  @media screen and (max-width: 576px) {
-    main {
-      flex-basis: 100%;
-    }
-  }
+  
